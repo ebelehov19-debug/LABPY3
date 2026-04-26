@@ -101,8 +101,6 @@ for task in queue.pending_tasks():
     print(f"Pending: {task.id}")
 for task in queue.high_priority_tasks():
     print(f"High priority: {task.id}")
-for task in queue.ready_to_execute():
-    process(task)
 tasks_list = list(queue)
 print(tasks_list)
 total = sum(1 for _ in queue)
