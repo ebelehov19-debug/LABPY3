@@ -70,7 +70,7 @@
 ## Инструкции по запуску
 
 1. **Клонирование репозитория**
-```git clone https://github.com/ebelehov19-debug/LabPY2_2```
+```https://github.com/ebelehov19-debug/LABPY3```
 2. **Создание вертуального окружения**
 ```python -m venv .venv```
 ```source .venv/bin/activate```
