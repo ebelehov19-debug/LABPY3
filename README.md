@@ -85,29 +85,8 @@
 1. Интерактивная проверка 
 ``` 
 python -c "
-from src.contracts.task import Task
-from src.inbox.task_queue import TaskQueue
-queue = TaskQueue()
-task1 = Task(id="1", payload="Отправить отчёт", priority="high")
-task2 = Task(id="2", payload="Проверить код", priority="medium")
-task3 = Task(id="3", payload="Задеплоить приложение", priority="high")
-queue.add(task1)
-queue.add_all([task2, task3])
-for task in queue:
-    print(task.id, task.payload)
-for task in queue:
-    print(f"Ещё раз: {task.id}")
-for task in queue.pending_tasks():
-    print(f"Pending: {task.id}")
-for task in queue.high_priority_tasks():
-    print(f"High priority: {task.id}")
-for task in queue.ready_to_execute():
-    process(task)
-tasks_list = list(queue)
-print(tasks_list)
-total = sum(1 for _ in queue)
-print(total)
-print(f"Всего задач: {len(queue)}")
+python -c "from src.contracts.task import Task; from src.inbox.task_queue import TaskQueue; queue 
+= TaskQueue(); task1 = Task(id='1', payload='Отправить отчёт', priority='high'); task2 = Task(id='2', payload='Проверить код', priority='medium'); task3 = Task(id='3', payload='Задеплоить приложение', priority='high'); queue.add(task1); queue.add_all([task2, task3]); [print(task.id, task.payload) for task in queue]; [print(f'Ещё раз: {task.id}') for task in queue]; [print(f'Pending: {task.id}') for task in queue.pending_tasks()]; [print(f'High priority: {task.id}') for task in queue.high_priority_tasks()]; tasks_list = list(queue); print(tasks_list); total = sum(1 for _ in queue); print(total); print(f'Всего задач: {len(queue)}')"
 "
 ```
 ## Запуск тестов
